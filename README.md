@@ -1,2 +1,2 @@
 # planets-simulation
-Orbital system simulation in Go and Ebitengine
+Planetary orbital system simulation in Go and Ebitengine
