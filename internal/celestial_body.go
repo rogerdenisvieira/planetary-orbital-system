@@ -10,9 +10,10 @@ import (
 )
 
 const (
-	G     float64 = 6.67428e-11
-	AU            = (149.6e6 * 1000) // 149.6 million km, in meters.
-	SCALE         = 250 / AU
+	G        float64 = 6.67428e-11
+	AU               = (149.6e6 * 1000) // 149.6 million km, in meters.
+	SCALE            = 250 / AU
+	TIMESTEP         = 3600 * 24 // 1 day
 )
 
 type CelestialBody struct {
@@ -29,8 +30,8 @@ type CelestialBody struct {
 
 func (body CelestialBody) draw(screen *ebiten.Image) {
 
-	x := float32(body.PX*SCALE + 480/2)
-	y := float32(body.PY*SCALE + 640/2)
+	x := float32(body.PX*SCALE + 800/2)
+	y := float32(body.PY*SCALE + 800/2)
 
 	vector.DrawFilledCircle(screen, x, y, (body.Radius), body.Color, false)
 
@@ -56,4 +57,27 @@ func (body CelestialBody) getAttraction(otherBody CelestialBody) (forceX, forceY
 	forceY = math.Sin(theta) * force
 
 	return forceX, forceY
+}
+
+func (body CelestialBody) updatePosition(otherBodies []CelestialBody) {
+	var total_fx, total_fy = 0, 0
+
+	for _, otherBody := range otherBodies {
+
+		if body.Name == otherBody.Name {
+			continue
+		}
+
+		fx, fy := body.getAttraction(otherBody)
+
+		total_fx += int(fx)
+		total_fy += int(fy)
+
+	}
+
+	body.VX += float64(total_fx) / body.Mass * TIMESTEP
+	body.VY += float64(total_fy) / body.Mass * TIMESTEP
+
+	body.PX += body.VX * TIMESTEP
+	body.PY += body.VY * TIMESTEP
 }
