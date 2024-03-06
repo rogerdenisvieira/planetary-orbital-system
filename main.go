@@ -8,7 +8,7 @@ import (
 
 func main() {
 	ebiten.SetWindowSize(640, 480)
-	ebiten.SetWindowTitle("E-biome")
+	ebiten.SetWindowTitle("Planetary Orbital System")
 
 	g := game.Game{}
 	g.Init()
