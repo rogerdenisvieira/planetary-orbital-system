@@ -6,10 +6,11 @@ Planetary orbital system simulation in Go and Ebitengine
 
 The presented code was based in the following projects:
 
-#### Simulating Planetary Orbits
+#### Tech With Tim
+https://www.youtube.com/watch?v=WTLPmUHTPqo
 https://github.com/techwithtim/Python-Planet-Simulation/blob/main/tutorial.py
 
-#### Tech With Tim
+#### Simulating Planetary Orbits
 https://fiftyexamples.readthedocs.io/en/latest/gravity.html
 
 ## Restoring Dependencies
