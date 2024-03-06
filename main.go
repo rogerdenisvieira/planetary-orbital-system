@@ -7,8 +7,9 @@ import (
 )
 
 func main() {
-	ebiten.SetWindowSize(640, 480)
+	ebiten.SetWindowSize(game.ScreenWidth, game.ScreenHeight)
 	ebiten.SetWindowTitle("Planetary Orbital System")
+	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
 
 	g := game.Game{}
 	g.Init()

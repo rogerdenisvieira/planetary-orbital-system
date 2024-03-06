@@ -13,7 +13,7 @@ import (
 const (
 	G        float64 = 6.67428e-11
 	AU               = 149.6e6 * 1000 // 149.6 million km, in meters.
-	Scale    float64 = 400 / AU
+	Scale    float64 = 250 / AU
 	Timestep         = 3600 * 24 // 1 day
 )
 
@@ -52,18 +52,18 @@ func (body CelestialBody) draw(screen *ebiten.Image) {
 	x := body.PosX*Scale + ScreenWidth/2
 	y := body.PosY*Scale + ScreenHeight/2
 
-	if len(body.Orbit) > 2 {
+	// if len(body.Orbit) > 2 {
 
-		for _, point := range body.Orbit {
-			x, y = point.X, point.Y
+	// 	for _, point := range body.Orbit {
+	// 		x, y = point.X, point.Y
 
-			x = x*Scale + ScreenWidth/2
-			y = y*Scale + ScreenHeight/2
+	// 		x = x*Scale + ScreenWidth/2
+	// 		y = y*Scale + ScreenHeight/2
 
-		}
+	vector.DrawFilledRect(screen, float32(x), float32(y), 1, 1, color.RGBA{255, 255, 255, 0}, false)
+	// 	}
 
-		vector.DrawFilledRect(screen, float32(x), float32(y), 2, 2, body.Color, false)
-	}
+	// }
 
 	vector.DrawFilledCircle(screen, float32(x), float32(y), float32(body.Radius), body.Color, false)
 

@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	ScreenWidth  = 1280
-	ScreenHeight = 1280
+	ScreenWidth  = 800
+	ScreenHeight = 800
 )
 
 var (
@@ -34,24 +34,6 @@ func (g *Game) Init() {
 
 	Sun.IsSun = true
 
-	Earth := NewCelestialBody(
-		"Terra",
-		(-1 * AU),
-		400,
-		16,
-		color.RGBA{0, 0, 255, 0},
-		5.9742*math.Pow(10, 24),
-		(29.783 * 1000))
-
-	Mars := NewCelestialBody(
-		"Marte",
-		(-1.524 * AU),
-		0,
-		12,
-		color.RGBA{255, 0, 0, 0},
-		6.39*math.Pow(10, 23),
-		(24.077 * 1000))
-
 	Mercury := NewCelestialBody(
 		"Mercúrio",
 		(0.387 * AU),
@@ -70,7 +52,34 @@ func (g *Game) Init() {
 		4.8685*math.Pow(10, 24),
 		(-35.02 * 1000))
 
-	Bodies = append(Bodies, Sun, Earth, Mars, Mercury, Venus)
+	Earth := NewCelestialBody(
+		"Terra",
+		(-1 * AU),
+		400,
+		16,
+		color.RGBA{0, 0, 255, 0},
+		5.9742*math.Pow(10, 24),
+		(29.783 * 1000))
+
+	Mars := NewCelestialBody(
+		"Marte",
+		(-1.524 * AU),
+		0,
+		12,
+		color.RGBA{255, 0, 0, 0},
+		6.42*math.Pow(10, 23),
+		(24.077 * 1000))
+
+	Jupiter := NewCelestialBody(
+		"Júpiter",
+		(-5.2038 * AU),
+		0,
+		20,
+		color.RGBA{255, 164, 0, 0},
+		1.898*math.Pow(10, 27),
+		(13.1 * 1000))
+
+	Bodies = append(Bodies, Sun, Earth, Mars, Mercury, Venus, Jupiter)
 
 }
 

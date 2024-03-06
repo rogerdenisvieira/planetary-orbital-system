@@ -1,6 +1,8 @@
 # Planetary Orbital System
 Planetary orbital system simulation in Go and Ebitengine
 
+![application running](assets/image.png)
+
 
 ## References
 
@@ -13,6 +15,9 @@ https://github.com/techwithtim/Python-Planet-Simulation/blob/main/tutorial.py
 
 #### Simulating Planetary Orbits
 https://fiftyexamples.readthedocs.io/en/latest/gravity.html
+
+#### Planetary Fact Sheet - Metric
+https://nssdc.gsfc.nasa.gov/planetary/factsheet/
 
 ## Restoring Dependencies
 
