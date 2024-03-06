@@ -8,6 +8,7 @@ The presented code was based in the following projects:
 
 #### Tech With Tim
 https://www.youtube.com/watch?v=WTLPmUHTPqo
+
 https://github.com/techwithtim/Python-Planet-Simulation/blob/main/tutorial.py
 
 #### Simulating Planetary Orbits
